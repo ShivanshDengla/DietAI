@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diet Recommendation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url(bg.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group label {
+            flex: 0 0 45%; /* Adjust the width as needed */
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-left: 10px;
+        }
+
+        .dropdown-group {
+            margin-bottom: 10px;
+        }
+
+        .dropdown-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .dropdown-group select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Diet Recommendation System</h1>
+    <form action="/recommend" method="post">
+        <h2>User Preferences</h2>
+
+
+        <!-- Diseases -->
+<label><b>Select Diseases:</b></label>
+<div class="checkbox-group">
+    <label for="anemia">anemia</label>
+             <input type="checkbox" id="anemia" name="anemia" value="1">
+             <label for="anemia">anemia</label>
+        <input type="checkbox" id="anemia" name="anemia" value="1">
+        <label for="cancer">cancer</label>
+        <input type="checkbox" id="cancer" name="cancer" value="1">
+        <label for="diabeties">diabeties</label>
+        <input type="checkbox" id="diabeties" name="diabeties" value="1">
+        <label for="eye_disease">eye_disease</label>
+        <input type="checkbox" id="eye_disease" name="eye_disease" value="1">
+        <label for="goitre">goitre</label>
+        <input type="checkbox" id="goitre" name="goitre" value="1">
+        <label for="heart_disease">heart_disease</label>
+        <input type="checkbox" id="heart_disease" name="heart_disease" value="1">
+        <label for="hypertension">hypertension</label>
+        <input type="checkbox" id="hypertension" name="hypertension" value="1">
+        <label for="kidney_disease">kidney_disease</label>
+        <input type="checkbox" id="kidney_disease" name="kidney_disease" value="1">
+        <label for="obesity">obesity</label>
+        <input type="checkbox" id="obesity" name="obesity" value="1">
+        <label for="pregnancy">pregnancy</label>
+        <input type="checkbox" id="pregnancy" name="pregnancy" value="1">
+        <label for="rickets">rickets</label>
+        <input type="checkbox" id="rickets" name="rickets" value="1">
+        <label for="scurvy">scurvy</label>
+        <input type="checkbox" id="scurvy" name="scurvy" value="1">
+</div>
+
+
+
+
+
+
+
+        <!-- Checkboxes in columns -->
+        <label><b>Select Nutrients:</b> </label>
+        <div class="checkbox-group">
+            <label for="calcium">calcium</label>
+            <input type="checkbox" id="calcium" name="calcium" value="1">
+            <label for="carbohydrates">carbohydrates</label>
+            <input type="checkbox" id="carbohydrates" name="carbohydrates" value="1">
+            <label for="chloride">chloride</label>
+            <input type="checkbox" id="chloride" name="chloride" value="1">
+            <label for="fiber">fiber</label>
+            <input type="checkbox" id="fiber" name="fiber" value="1">
+            <label for="iodine">iodine</label>
+            <input type="checkbox" id="iodine" name="iodine" value="1">
+            <label for="iron">iron</label>
+            <input type="checkbox" id="iron" name="iron" value="1">
+            <label for="magnesium">magnesium</label>
+            <input type="checkbox" id="magnesium" name="magnesium" value="1">
+            <label for="manganese">manganese</label>
+            <input type="checkbox" id="manganese" name="manganese" value="1">
+            <label for="phosphorus">phosphorus</label>
+            <input type="checkbox" id="phosphorus" name="phosphorus" value="1">
+            <label for="potassium">potassium</label>
+            <input type="checkbox" id="potassium" name="potassium" value="1">
+            <label for="protien">protien</label>
+            <input type="checkbox" id="protien" name="protien" value="1">
+            <label for="selenium">selenium</label>
+            <input type="checkbox" id="selenium" name="selenium" value="1">
+            <label for="sodium">sodium</label>
+            <input type="checkbox" id="sodium" name="sodium" value="1">
+            <label for="vitamin_a">vitamin_a</label>
+            <input type="checkbox" id="vitamin_a" name="vitamin_a" value="1">
+            <label for="vitamin_c">vitamin_c</label>
+            <input type="checkbox" id="vitamin_c" name="vitamin_c" value="1">
+            <label for="vitamin_d">vitamin_d</label>
+            <input type="checkbox" id="vitamin_d" name="vitamin_d" value="1">
+            <label for="vitamin_e">vitamin_e</label>
+            <input type="checkbox" id="vitamin_e" name="vitamin_e" value="1">
+        </div>
+        <!-- Dropdown for related options -->
+        <div class="dropdown-group">
+            <label for="diet_type"><b>Select Diet Type:</b></label>
+            <select id="diet_type" name="diet_type">
+                <option value="Mediterranean_diet">Mediterranean Diet</option>
+                <option value="alkaline_diet">Alkaline Diet</option>
+                <option value="dash_diet">DASH Diet</option>
+                <option value="gluten_free_diet">Gluten-Free Diet</option>
+                <option value="high_fiber_diet">High-Fiber Diet</option>
+                <option value="high_protien_diet">High-Protein Diet</option>
+                <option value="hormone_diet">Hormone Diet</option>
+                <option value="ketogenic_diet">Ketogenic Diet</option>
+                <option value="low_carb_diet">Low-Carb Diet</option>
+                <option value="low_fat_diet">Low-Fat Diet</option>
+                <option value="low_sodium_diet">Low-Sodium Diet</option>
+                <option value="omni_diet">Omni Diet</option>
+                <option value="paleo_diet">Paleo Diet</option>
+                <option value="type_a_diet">Type A Diet</option>
+                <option value="type_o_diet">Type O Diet</option>
+                <option value="vegan_diet">Vegan Diet</option>
+            </select>
+        </div>
+        
+        <input type="submit" value="Get Recommendation">
+    </form>
+</body>
+</html>
+
